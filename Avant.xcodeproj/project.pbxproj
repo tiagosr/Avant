@@ -13,7 +13,63 @@
 		B18BD7B116FCE3E600947E4A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B18BD7AF16FCE3E600947E4A /* Credits.rtf */; };
 		B18BD7B416FCE3E600947E4A /* AvAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B18BD7B316FCE3E600947E4A /* AvAppDelegate.m */; };
 		B18BD7B716FCE3E600947E4A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B18BD7B516FCE3E600947E4A /* MainMenu.xib */; };
+		B18BD7D216FCE52100947E4A /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7C916FCE41800947E4A /* libSDL2.a */; };
+		B18BD7D416FCE58E00947E4A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7D316FCE58E00947E4A /* OpenGL.framework */; };
+		B18BD7D616FCE59A00947E4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7D516FCE59900947E4A /* QuartzCore.framework */; };
+		B18BD7D816FCE5A400947E4A /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7D716FCE5A400947E4A /* ApplicationServices.framework */; };
+		B18BD7DA16FCE5F500947E4A /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7D916FCE5F500947E4A /* ForceFeedback.framework */; };
+		B18BD7DC16FCE60000947E4A /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7DB16FCE60000947E4A /* CoreAudioKit.framework */; };
+		B18BD7DE16FCE60A00947E4A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7DD16FCE60A00947E4A /* IOKit.framework */; };
+		B18BD7E016FCE61700947E4A /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7DF16FCE61700947E4A /* CoreAudio.framework */; };
+		B18BD7E216FCE62200947E4A /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7E116FCE62200947E4A /* AudioUnit.framework */; };
+		B18BD7E416FCEA0B00947E4A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18BD7E316FCEA0B00947E4A /* Carbon.framework */; };
+		B1AB926C16FF562100B42B44 /* avantvm.c in Sources */ = {isa = PBXBuildFile; fileRef = B1AB926B16FF562100B42B44 /* avantvm.c */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B18BD7C616FCE41800947E4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18BD7BD16FCE41700947E4A /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF66C0761BA81005FE872;
+			remoteInfo = Framework;
+		};
+		B18BD7C816FCE41800947E4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18BD7BD16FCE41700947E4A /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6B30761BA81005FE872;
+			remoteInfo = "Static Library";
+		};
+		B18BD7CA16FCE41800947E4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18BD7BD16FCE41700947E4A /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6BE0761BA81005FE872;
+			remoteInfo = "Standard DMG";
+		};
+		B18BD7CC16FCE41800947E4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18BD7BD16FCE41700947E4A /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6C30761BA81005FE872;
+			remoteInfo = "Developer Extras Package";
+		};
+		B18BD7CE16FCE41800947E4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18BD7BD16FCE41700947E4A /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 00D8D9EF1195090700638393;
+			remoteInfo = testsdl;
+		};
+		B18BD7D016FCE51900947E4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18BD7BD16FCE41700947E4A /* SDL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BECDF66D0761BA81005FE872;
+			remoteInfo = "Static Library";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B18BD79D16FCE3E500947E4A /* Avant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +85,18 @@
 		B18BD7B216FCE3E600947E4A /* AvAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvAppDelegate.h; sourceTree = "<group>"; };
 		B18BD7B316FCE3E600947E4A /* AvAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvAppDelegate.m; sourceTree = "<group>"; };
 		B18BD7B616FCE3E600947E4A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B18BD7BD16FCE41700947E4A /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = /Users/tiagorezende/Projects/Cyclers/../../libs/cpp/SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = "<absolute>"; };
+		B18BD7D316FCE58E00947E4A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		B18BD7D516FCE59900947E4A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B18BD7D716FCE5A400947E4A /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		B18BD7D916FCE5F500947E4A /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = System/Library/Frameworks/ForceFeedback.framework; sourceTree = SDKROOT; };
+		B18BD7DB16FCE60000947E4A /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		B18BD7DD16FCE60A00947E4A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		B18BD7DF16FCE61700947E4A /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		B18BD7E116FCE62200947E4A /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		B18BD7E316FCEA0B00947E4A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		B1AB926516FF560300B42B44 /* avantvm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = avantvm.h; sourceTree = "<group>"; };
+		B1AB926B16FF562100B42B44 /* avantvm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = avantvm.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +104,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18BD7E416FCEA0B00947E4A /* Carbon.framework in Frameworks */,
+				B18BD7D216FCE52100947E4A /* libSDL2.a in Frameworks */,
+				B18BD7E216FCE62200947E4A /* AudioUnit.framework in Frameworks */,
+				B18BD7E016FCE61700947E4A /* CoreAudio.framework in Frameworks */,
+				B18BD7DE16FCE60A00947E4A /* IOKit.framework in Frameworks */,
+				B18BD7DC16FCE60000947E4A /* CoreAudioKit.framework in Frameworks */,
+				B18BD7DA16FCE5F500947E4A /* ForceFeedback.framework in Frameworks */,
+				B18BD7D816FCE5A400947E4A /* ApplicationServices.framework in Frameworks */,
+				B18BD7D616FCE59A00947E4A /* QuartzCore.framework in Frameworks */,
+				B18BD7D416FCE58E00947E4A /* OpenGL.framework in Frameworks */,
 				B18BD7A116FCE3E600947E4A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +124,7 @@
 		B18BD79416FCE3E500947E4A = {
 			isa = PBXGroup;
 			children = (
+				B18BD7BD16FCE41700947E4A /* SDL.xcodeproj */,
 				B18BD7A616FCE3E600947E4A /* Avant */,
 				B18BD79F16FCE3E600947E4A /* Frameworks */,
 				B18BD79E16FCE3E600947E4A /* Products */,
@@ -63,6 +142,15 @@
 		B18BD79F16FCE3E600947E4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B18BD7E316FCEA0B00947E4A /* Carbon.framework */,
+				B18BD7E116FCE62200947E4A /* AudioUnit.framework */,
+				B18BD7DF16FCE61700947E4A /* CoreAudio.framework */,
+				B18BD7DD16FCE60A00947E4A /* IOKit.framework */,
+				B18BD7DB16FCE60000947E4A /* CoreAudioKit.framework */,
+				B18BD7D916FCE5F500947E4A /* ForceFeedback.framework */,
+				B18BD7D716FCE5A400947E4A /* ApplicationServices.framework */,
+				B18BD7D516FCE59900947E4A /* QuartzCore.framework */,
+				B18BD7D316FCE58E00947E4A /* OpenGL.framework */,
 				B18BD7A016FCE3E600947E4A /* Cocoa.framework */,
 				B18BD7A216FCE3E600947E4A /* Other Frameworks */,
 			);
@@ -82,6 +170,9 @@
 		B18BD7A616FCE3E600947E4A /* Avant */ = {
 			isa = PBXGroup;
 			children = (
+				B18BD7AC16FCE3E600947E4A /* main.m */,
+				B1AB926516FF560300B42B44 /* avantvm.h */,
+				B1AB926B16FF562100B42B44 /* avantvm.c */,
 				B18BD7B216FCE3E600947E4A /* AvAppDelegate.h */,
 				B18BD7B316FCE3E600947E4A /* AvAppDelegate.m */,
 				B18BD7B516FCE3E600947E4A /* MainMenu.xib */,
@@ -95,11 +186,22 @@
 			children = (
 				B18BD7A816FCE3E600947E4A /* Avant-Info.plist */,
 				B18BD7A916FCE3E600947E4A /* InfoPlist.strings */,
-				B18BD7AC16FCE3E600947E4A /* main.m */,
 				B18BD7AE16FCE3E600947E4A /* Avant-Prefix.pch */,
 				B18BD7AF16FCE3E600947E4A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B18BD7BE16FCE41700947E4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B18BD7C716FCE41800947E4A /* SDL2.framework */,
+				B18BD7C916FCE41800947E4A /* libSDL2.a */,
+				B18BD7CB16FCE41800947E4A /* Standard DMG */,
+				B18BD7CD16FCE41800947E4A /* Developer Extras Package */,
+				B18BD7CF16FCE41800947E4A /* testsdl.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +218,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B18BD7D116FCE51900947E4A /* PBXTargetDependency */,
 			);
 			name = Avant;
 			productName = Avant;
@@ -142,12 +245,56 @@
 			mainGroup = B18BD79416FCE3E500947E4A;
 			productRefGroup = B18BD79E16FCE3E600947E4A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B18BD7BE16FCE41700947E4A /* Products */;
+					ProjectRef = B18BD7BD16FCE41700947E4A /* SDL.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B18BD79C16FCE3E500947E4A /* Avant */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B18BD7C716FCE41800947E4A /* SDL2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL2.framework;
+			remoteRef = B18BD7C616FCE41800947E4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B18BD7C916FCE41800947E4A /* libSDL2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.a;
+			remoteRef = B18BD7C816FCE41800947E4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B18BD7CB16FCE41800947E4A /* Standard DMG */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Standard DMG";
+			remoteRef = B18BD7CA16FCE41800947E4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B18BD7CD16FCE41800947E4A /* Developer Extras Package */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Developer Extras Package";
+			remoteRef = B18BD7CC16FCE41800947E4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B18BD7CF16FCE41800947E4A /* testsdl.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = testsdl.app;
+			remoteRef = B18BD7CE16FCE41800947E4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B18BD79B16FCE3E500947E4A /* Resources */ = {
@@ -169,10 +316,19 @@
 			files = (
 				B18BD7AD16FCE3E600947E4A /* main.m in Sources */,
 				B18BD7B416FCE3E600947E4A /* AvAppDelegate.m in Sources */,
+				B1AB926C16FF562100B42B44 /* avantvm.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B18BD7D116FCE51900947E4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Static Library";
+			targetProxy = B18BD7D016FCE51900947E4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B18BD7A916FCE3E600947E4A /* InfoPlist.strings */ = {
@@ -231,6 +387,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "~/libs/cpp/SDL/include";
 			};
 			name = Debug;
 		};
@@ -256,6 +413,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "~/libs/cpp/SDL/include";
 			};
 			name = Release;
 		};
@@ -302,6 +460,7 @@
 				B18BD7BC16FCE3E600947E4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
