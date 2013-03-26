@@ -15,7 +15,11 @@
  * Each opcode can consume or produce a number of stack elements
  */
 
+#include <unistd.h>
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
+#include <memory.h>
 
 
 typedef enum _argtype {
@@ -45,7 +49,7 @@ typedef struct {
 
 typedef struct {
     t_atom atom;
-    int constant;
+    bool constant;
     char *str;
 } t_boxed_string;
 
@@ -61,8 +65,24 @@ typedef struct _cell {
     t_atom *rest;
 } t_cell;
 
+typedef union _atom_types {
+    t_atom *atom;
+    t_boxed_float *boxed_float;
+    t_boxed_int *boxed_int;
+    t_boxed_string *boxed_string;
+    t_symbol *symbol;
+    t_cell *cell;
+} t_u_atomptr;
+
+typedef union _atom_union {
+    int i;
+    t_u_atomptr a;
+} u_atomptr_int;
+
 typedef struct _av_context {
-    t_atom **stack;
+    u_atomptr_int *stack;
+    u_atomptr_int *stack_end;
+    size_t stack_size;
 } t_av_context;
 
 typedef struct _av_op_ctx {

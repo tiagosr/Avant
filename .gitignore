@@ -1,3 +1,5 @@
 
 Avant.xcodeproj/xcuserdata
 build/*
+
+*.xcuserstate
