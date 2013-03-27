@@ -70,24 +70,18 @@ typedef struct {
 int main(int argc, char *argv[]) {
     //return NSApplicationMain(argc, (const char **)argv);
     SDL_Init(SDL_INIT_EVERYTHING);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
     SDL_Window *window = SDL_CreateWindow("Avant", SDL_WINDOWPOS_UNDEFINED,
                                           SDL_WINDOWPOS_UNDEFINED, 800, 600,
                                           SDL_WINDOW_RESIZABLE |
                                           SDL_WINDOW_SHOWN |
                                           SDL_WINDOW_OPENGL);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+    SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
     SDL_GLContext *glctx = SDL_GL_CreateContext(window);
-    
-    GLint vtxarr = 0;
-    glGenVertexArrays(1, &vtxarr);
-    GLint arrbuf = 0;
-    glGenBuffers(1, &arrbuf);
-    glBindVertexArray(vtxarr);
-    glBindBuffer(GL_ARRAY_BUFFER, arrbuf);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float)*4, NULL, GL_DYNAMIC_DRAW);
-    float *ptmap = glMapBufferRange(GL_ARRAY_BUFFER, 0, sizeof(float)*4, GL_MAP_WRITE_BIT|GL_MAP_INVALIDATE_RANGE_BIT);
-    printf("map ptr: 0x%X",ptmap);
+    printf("gl version: %s\n", glGetString(GL_VERSION));
+
     SDL_Event e;
     
     bool quit = false;
