@@ -8,6 +8,7 @@
 
 #include "SDL.h"
 #import <Cocoa/Cocoa.h>
+#import <OpenGL/gl3.h>
 
 static char * resource_file_path(const char *filename)
 {
@@ -69,6 +70,8 @@ typedef struct {
 int main(int argc, char *argv[]) {
     //return NSApplicationMain(argc, (const char **)argv);
     SDL_Init(SDL_INIT_EVERYTHING);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
     SDL_Window *window = SDL_CreateWindow("Avant", SDL_WINDOWPOS_UNDEFINED,
                                           SDL_WINDOWPOS_UNDEFINED, 800, 600,
                                           SDL_WINDOW_RESIZABLE |
@@ -76,6 +79,15 @@ int main(int argc, char *argv[]) {
                                           SDL_WINDOW_OPENGL);
     SDL_GLContext *glctx = SDL_GL_CreateContext(window);
     
+    GLint vtxarr = 0;
+    glGenVertexArrays(1, &vtxarr);
+    GLint arrbuf = 0;
+    glGenBuffers(1, &arrbuf);
+    glBindVertexArray(vtxarr);
+    glBindBuffer(GL_ARRAY_BUFFER, arrbuf);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float)*4, NULL, GL_DYNAMIC_DRAW);
+    float *ptmap = glMapBufferRange(GL_ARRAY_BUFFER, 0, sizeof(float)*4, GL_MAP_WRITE_BIT|GL_MAP_INVALIDATE_RANGE_BIT);
+    printf("map ptr: 0x%X",ptmap);
     SDL_Event e;
     
     bool quit = false;
