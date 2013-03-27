@@ -9,51 +9,6 @@
 #include "avantvm.h"
 #include <stdio.h>
 
-typedef struct _op_spec {
-    char size;
-    char vars;
-} t_op_spec;
-
-
-enum _ops {
-    _ABORT = 0,
-    NOP,
-    
-    PUSH_INT,
-    PUSH_FLOAT,
-    PUSH_STR,
-    PUSH_PTR,
-    
-    RESIZE,
-    DUP,
-    
-    STORE,
-    LOAD,
-    
-    F_ADD,
-    F_SUB,
-    F_MUL,
-    F_DIV,
-    
-    I_ADD,
-    I_SUB,
-    I_MUL,
-    I_DIV,
-    I_MOD,
-    
-    I_ADD_C,
-    I_ADD_C_C,
-    I_SUB_C,
-    I_SUB_C_C,
-    
-    I_DIVMOD,
-    
-    I_INC,
-    I_DEC,
-    
-    EQUALS,
-    EQUALS_0,
-};
 
 
 static inline void set_boxed_int(t_atom **p, int i) {
@@ -123,15 +78,13 @@ is_already_string:
 }
 
 
-
-
-
 int execute(t_av_context *ctx, char* code) {
     t_av_op_ctx opctx;
 #define ST(x) (ctx->stack[code[x]])
 #define ST_AS_INT(x) (ST(x).i>>1)
-#define ST_IS_ATOM(x) (ST(x).i&1)
-#define ST_AS_ATOM(x) ((t_u_atomptr)(ST(x).a-1))
+#define ST_IS_INT(x) (ST(x).i&1)
+#define ST_IS_ATOM(x) ((ST(x).i&1)==0)
+#define ST_AS_ATOM(x) (ST(x).a)
     while (1) {
         switch (code[0]) {
             case _ABORT:
@@ -149,7 +102,6 @@ int execute(t_av_context *ctx, char* code) {
                 u_atomptr_int ip;
                 ip.i = i;
                 ctx->stack[code[sizeof(int)+1]].i = i;
-                //set_boxed_int(&(ST(sizeof(int)+1)->atom), i);
                 code += 1+sizeof(int)+1;
             }
                 break;
@@ -187,12 +139,29 @@ int execute(t_av_context *ctx, char* code) {
             
             case DUP:
             {
-                
+                if (ST_IS_ATOM(1)) {
+                    if (ST_IS_ATOM(2)) {
+                        // unreference 2, then copy atom
+                    } else {
+                        // copy atom
+                    }
+                } else {
+                    if (ST_IS_ATOM(2)) {
+                        // unreference 2, then assign
+                    }
+                    ST(2).i = ST(1).i;
+                }
                 code += 1+2;
             }
                 break;
+                
+            case STORE:
+            {
+                
+                code += 1+2;
+            }
             default:
-                break;
+                return -2; // invalid opcode
         }
     }
 #undef ST_IS_INT

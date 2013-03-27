@@ -33,8 +33,55 @@ typedef enum _argtype {
     A_POINTER,
 } t_argtype;
 
+enum _ops {
+    _ABORT = 0,
+    NOP,
+    
+    PUSH_INT,
+    PUSH_FLOAT,
+    PUSH_STR,
+    PUSH_PTR,
+    
+    RESIZE,
+    DUP,
+    
+    STORE,
+    LOAD,
+    
+    F_ADD,
+    F_SUB,
+    F_MUL,
+    F_DIV,
+    
+    I_ADD,
+    I_SUB,
+    I_MUL,
+    I_DIV,
+    I_MOD,
+    
+    I_ADD_C,
+    I_ADD_C_C,
+    I_SUB_C,
+    I_SUB_C_C,
+    
+    I_DIVMOD,
+    
+    I_INC,
+    I_DEC,
+    
+    EQUALS,
+    EQUALS_0,
+};
+
 typedef struct _atom {
-    t_argtype atype;
+    union {
+        struct _atom *prototype;
+        struct {
+            char atype;
+            char flags;
+            unsigned padding:(sizeof(struct _atom*)-sizeof(char)-sizeof(char));
+        };
+    };
 } t_atom; // struct for boxed values
 
 typedef struct {
